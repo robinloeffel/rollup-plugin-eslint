@@ -1,5 +1,5 @@
 {
-  "name": "@robinloeffel/rollup-plugin-eslint",
+  "name": "robins-rollup-plugin-eslint",
   "version": "0.1.0",
   "description": "Lint your Rollup bundles with ESLint.",
   "main": "index.js",
