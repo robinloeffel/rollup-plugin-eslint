@@ -1,0 +1,28 @@
+{
+  "name": "@robinloeffel/rollup-plugin-eslint",
+  "version": "0.1.0",
+  "description": "Lint your Rollup bundles with ESLint.",
+  "main": "index.js",
+  "repository": "robinloeffel/rollup-plugin-eslint",
+  "author": "Robin Löffel (https://robinloeffel.ch) <hi@robinloeffel.ch>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@rollup/pluginutils": "~3",
+    "eslint": "~7"
+  },
+  "devDependencies": {
+    "eslint-config-sweet": "^0.6.1"
+  },
+  "peerDependencies": {
+    "rollup": "~2"
+  },
+  "eslintConfig": {
+    "extends": "sweet/node"
+  }
+}
