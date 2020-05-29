@@ -6,6 +6,13 @@
   "repository": "robinloeffel/rollup-plugin-eslint",
   "author": "Robin Löffel (https://robinloeffel.ch) <hi@robinloeffel.ch>",
   "license": "MIT",
+  "keywords": [
+    "rollup",
+    "plugin",
+    "rollup-plugin",
+    "eslint",
+    "lint"
+  ],
   "engines": {
     "node": ">=10"
   },
