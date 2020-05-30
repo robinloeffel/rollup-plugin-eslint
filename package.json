@@ -34,11 +34,12 @@
     "rollup": "~2"
   },
   "scripts": {
-    "test": "ava test/test.js --watch --verbose"
+    "start": "yarn test --watch",
+    "test": "ava test/test.js --verbose"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test"
+      "pre-commit": "yarn test --fail-fast"
     }
   }
 }
