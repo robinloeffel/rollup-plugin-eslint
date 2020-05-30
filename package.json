@@ -1,6 +1,6 @@
 {
   "name": "robins-rollup-plugin-eslint",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lint your Rollup bundles with ESLint.",
   "main": "index.js",
   "repository": "robinloeffel/rollup-plugin-eslint",
@@ -17,19 +17,28 @@
     "node": ">=10"
   },
   "files": [
-    "index.js"
+    "src/index.js"
   ],
   "dependencies": {
     "@rollup/pluginutils": "~3",
     "eslint": "~7"
   },
   "devDependencies": {
-    "eslint-config-sweet": "^0.6.1"
+    "ava": "~3",
+    "eslint-config-sweet": "*",
+    "eslint-plugin-ava": "~10",
+    "husky": "~4",
+    "rollup": "~2"
   },
   "peerDependencies": {
     "rollup": "~2"
   },
-  "eslintConfig": {
-    "extends": "sweet/node"
+  "scripts": {
+    "test": "ava test/test.js --watch --verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
   }
 }

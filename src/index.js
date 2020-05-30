@@ -3,12 +3,12 @@ const { createFilter } = require('@rollup/pluginutils');
 
 module.exports = (eslintOptions = {}, filterOptions = {}) => {
   const filter = createFilter(filterOptions.include, filterOptions.exclude);
+  const eslint = new ESLint(eslintOptions);
 
   return {
     name: 'eslint',
     transform: async (code, id) => {
       if (filter(id)) {
-        const eslint = new ESLint(eslintOptions);
         const result = await eslint.lintText(code, {
           filePath: id
         });
