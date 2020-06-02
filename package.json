@@ -1,8 +1,8 @@
 {
   "name": "robins-rollup-plugin-eslint",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Lint your Rollup bundles with ESLint.",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "robinloeffel/rollup-plugin-eslint",
   "author": "Robin Löffel (https://robinloeffel.ch) <hi@robinloeffel.ch>",
   "license": "MIT",
