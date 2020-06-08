@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.3
+_2020-06-08_
+
+- Correctly ignore `node_modules` per default
+
 ## v0.1.2
 _2020-06-02_
 

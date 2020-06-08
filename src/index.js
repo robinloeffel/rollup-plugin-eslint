@@ -1,8 +1,14 @@
 const { ESLint } = require('eslint');
 const { createFilter } = require('@rollup/pluginutils');
 
-module.exports = (eslintOptions = {}, filterOptions = {}) => {
-  const filter = createFilter(filterOptions.include, filterOptions.exclude);
+module.exports = (
+  eslintOptions = {},
+  filterOptions = {}
+) => {
+  const filter = createFilter(
+    filterOptions.include,
+    filterOptions.exclude || 'node_modules/**'
+  );
   const eslint = new ESLint(eslintOptions);
 
   return {
@@ -21,10 +27,13 @@ module.exports = (eslintOptions = {}, filterOptions = {}) => {
         const output = formatter.format(result);
 
         if (output.length > 0) {
-          // eslint-disable-next-line no-console
           console.log(output);
         }
+
+        return result[0].output || null;
       }
+
+      return null;
     }
   };
 };
