@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.4
+_2020-06-09_
+
+- Re-release as `@rbnlffl/rollup-plugin-eslint`
+
 ## v0.1.3
 _2020-06-08_
 
