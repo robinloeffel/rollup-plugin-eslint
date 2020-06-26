@@ -1,6 +1,12 @@
 # @rbnlffl/rollup-plugin-eslint
 
-[![latest version on npm](https://img.shields.io/npm/v/@rbnlffl/rollup-plugin-eslint)](https://www.npmjs.com/package/@rbnlffl/rollup-plugin-eslint) [![npm downloads a month](https://img.shields.io/npm/dm/@rbnlffl/rollup-plugin-eslint)](https://www.npmjs.com/package/@rbnlffl/rollup-plugin-eslint) [![required node version](https://img.shields.io/node/v/@rbnlffl/rollup-plugin-eslint)](https://github.com/nodejs/Release) [![dependency status](https://img.shields.io/david/robinloeffel/rollup-plugin-eslint)](https://david-dm.org/robinloeffel/rollup-plugin-eslint) [![eslint dependency](https://img.shields.io/npm/dependency-version/@rbnlffl/rollup-plugin-eslint/eslint?label=eslint%20dep)](https://github.com/eslint/eslint) [![rollup peer dependency](https://img.shields.io/npm/dependency-version/@rbnlffl/rollup-plugin-eslint/peer/rollup?label=rollup%20peer%20dep)](https://github.com/rollup/rollup) [![package license](https://img.shields.io/npm/l/@rbnlffl/rollup-plugin-eslint)](license)
+[![latest version on npm](https://img.shields.io/npm/v/@rbnlffl/rollup-plugin-eslint)](https://www.npmjs.com/package/@rbnlffl/rollup-plugin-eslint)
+[![npm downloads a month](https://img.shields.io/npm/dm/@rbnlffl/rollup-plugin-eslint)](https://www.npmjs.com/package/@rbnlffl/rollup-plugin-eslint)
+[![required node version](https://img.shields.io/node/v/@rbnlffl/rollup-plugin-eslint)](https://github.com/nodejs/Release)
+[![dependency status](https://img.shields.io/david/robinloeffel/rollup-plugin-eslint)](https://david-dm.org/robinloeffel/rollup-plugin-eslint)
+[![eslint dependency](https://img.shields.io/npm/dependency-version/@rbnlffl/rollup-plugin-eslint/eslint?label=eslint%20dep)](https://github.com/eslint/eslint)
+[![rollup peer dependency](https://img.shields.io/npm/dependency-version/@rbnlffl/rollup-plugin-eslint/peer/rollup?label=rollup%20peer%20dep)](https://github.com/rollup/rollup)
+[![package license](https://img.shields.io/npm/l/@rbnlffl/rollup-plugin-eslint)](license)
 
 > Lint your [Rollup](https://github.com/rollup/rollup) bundles with [ESLint](https://github.com/eslint/eslint). 🐝
 
@@ -51,7 +57,7 @@ export default {
 
 ## Why a new plugin?
 
-Because [`rollup-plugin-eslint`](https://github.com/TrySound/rollup-plugin-eslint) seems to be dead and I got frustrated waiting for a bugfix.
+Because [`rollup-plugin-eslint`](https://github.com/TrySound/rollup-plugin-eslint) seems to be dead and relies on [`eslint^6.0.0`](https://github.com/TrySound/rollup-plugin-eslint/blob/master/package.json#L42), which resolves to `v6.8.0`, resulting in unexpected errors when using rules introduced in versions 7 and up.
 
 ## License
 
