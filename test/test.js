@@ -58,3 +58,17 @@ test('eslint autofix works', async t => {
 
   t.true(output[0].code.includes('const func'));
 });
+
+test('eslint ignores node_modules', async t => {
+  const bundle = await rollup({
+    input: 'test/fixtures/no-node-modules.js',
+    plugins: [
+      eslint()
+    ]
+  });
+  const { output } = await bundle.generate({
+    file: 'test/fixtures/no-node-modules.js'
+  });
+
+  t.true(output[0].code.length > 0);
+});

@@ -37,7 +37,7 @@
     "rollup": "2.x"
   },
   "scripts": {
-    "start": "yarn test --watch",
+    "start": "yarn test",
     "test": "ava test/test.js --verbose"
   },
   "husky": {
