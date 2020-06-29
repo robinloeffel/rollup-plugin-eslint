@@ -20,7 +20,6 @@ yarn add @rbnlffl/rollup-plugin-eslint --dev
 
 ```js
 import eslint from '@rbnlffl/rollup-plugin-eslint';
-// ...
 
 export default {
   // ..
@@ -33,27 +32,35 @@ export default {
 
 ## Config
 
-This plugin respects your [ESLint configuration](https://eslint.org/docs/user-guide/configuring) as per default. Apart from that, it can take two configuration objects. The first one is intended for the [ESLint constructor](https://eslint.org/docs/developer-guide/nodejs-api#%E2%97%86-new-eslint-options) and gets right passed through, the second one can contain `include` and `exclude` patterns for Rollup's [`filter` plugin](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter). You can check out all the possible values by visiting the links in this paragraph.
+This plugin respects your [ESLint configuration](https://eslint.org/docs/user-guide/configuring) as per default. It also takes a configuration object intended for the [ESLint constructor](https://eslint.org/docs/developer-guide/nodejs-api#%E2%97%86-new-eslint-options) with the addition of a `filterInclude` and `filterExclude` prop for Rollup's [`filter` plugin](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter). The most popular configuration options are as follows:
 
-```js
-import eslint from '@rbnlffl/rollup-plugin-eslint';
-// ...
+### `fix`
 
-const development = process.env.ROLLUP_WATCH === 'true';
-// ...
+Type: `boolean`<br>
+Default: `false`
 
-export default {
-  // ..
-  plugins: [
-    eslint({
-      fix: development
-    }, {
-      exclude: 'src/no-lint/**/*'
-    })
-    // ..
-  ]
-};
-```
+Controls whether to enable or disable the autofix feature of ESLint.
+
+### `extensions`
+
+Type: `string[]`<br>
+Default: `null`
+
+Controls what type of files ESLint should look at. The default of `null` is equal to `[ '.js' ]`.
+
+### `filterInclude`
+
+Type: `string` or `string[]`<br>
+Default: `null`
+
+A single [`minimatch`](https://github.com/isaacs/minimatch) pattern or an array of patterns controlling which files this plugin should explicitly include. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) plugin.
+
+### `filterExclude`
+
+Type: `string` or `string[]`<br>
+Default: `'node_modules/**'`
+
+A single [`minimatch`](https://github.com/isaacs/minimatch) pattern or an array of patterns controlling which files this plugin should explicitly exclude. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) plugin, resulting in the matching files being completely skipped.
 
 ## Why a new plugin?
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.0
+_2020-06-29_
+
+- **Breaking:** Unify the `options` object, see [readme.md](readme.md#config)
+
 ## v0.1.4
 _2020-06-09_
 

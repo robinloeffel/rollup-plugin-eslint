@@ -30,9 +30,8 @@ test('rollup runs with the plugin and a configuration', async t => {
     input: 'test/fixtures/all-good.js',
     plugins: [
       eslint({
-        fix: true
-      }, {
-        include: 'src/**'
+        fix: true,
+        filterInclude: 'src/**'
       })
     ]
   });
