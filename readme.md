@@ -32,33 +32,53 @@ export default {
 
 ## Config
 
-This plugin respects your [ESLint configuration](https://eslint.org/docs/user-guide/configuring) as per default. It also takes a configuration object intended for the [ESLint constructor](https://eslint.org/docs/developer-guide/nodejs-api#%E2%97%86-new-eslint-options) with the addition of a `filterInclude` and `filterExclude` prop for Rollup's [`filter` plugin](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter). The most popular configuration options are as follows:
+This plugin respects your [ESLint configuration](https://eslint.org/docs/user-guide/configuring) as per default. It also takes a configuration object intended for the [ESLint constructor](https://eslint.org/docs/developer-guide/nodejs-api#-new-eslintoptions) with the addition of a `throwOnWarning`, `throwOnError`, `filterInclude` and `filterExclude` prop. The most popular configuration options are as follows:
 
 ### `fix`
 
 Type: `boolean`<br>
-Default: `false`
+Default: `false`<br>
+Utilized by: [ESLint constructor](https://eslint.org/docs/developer-guide/nodejs-api#-new-eslintoptions)
 
 Controls whether to enable or disable the autofix feature of ESLint.
 
 ### `extensions`
 
 Type: `string[]`<br>
-Default: `null`
+Default: `null`<br>
+Utilized by: [ESLint constructor](https://eslint.org/docs/developer-guide/nodejs-api#-new-eslintoptions)
 
 Controls what type of files ESLint should look at. The default of `null` is equal to `[ '.js' ]`.
+
+### `throwOnWarning`
+
+Type: `boolean`<br>
+Default: `false`<br>
+Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L36)
+
+Controls whether or not to throw an error and exit the process when ESLint reports any warnings.
+
+### `throwOnError`
+
+Type: `boolean`<br>
+Default: `false`<br>
+Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L40)
+
+Controls whether or not to throw an error and exit the process when ESLint reports any errors.
 
 ### `filterInclude`
 
 Type: `string` or `string[]`<br>
-Default: `null`
+Default: `null`<br>
+Utilized by: [`createFilter` plugin](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
 
 A single [`minimatch`](https://github.com/isaacs/minimatch) pattern or an array of patterns controlling which files this plugin should explicitly include. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) plugin.
 
 ### `filterExclude`
 
 Type: `string` or `string[]`<br>
-Default: `'node_modules/**'`
+Default: `'node_modules/**'`<br>
+Utilized by: [`createFilter` plugin](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
 
 A single [`minimatch`](https://github.com/isaacs/minimatch) pattern or an array of patterns controlling which files this plugin should explicitly exclude. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) plugin, resulting in the matching files being completely skipped.
 

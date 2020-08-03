@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.0
+_2020-08-03_
+
+- Introduce [`throwOnWarning`](readme.md#throwOnWarning) and [`throwOnError`](readme.md#throwOnError) options
+
 ## v1.0.0
 _2020-06-29_
 
