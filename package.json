@@ -1,6 +1,6 @@
 {
   "name": "@rbnlffl/rollup-plugin-eslint",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Lint your Rollup bundles with ESLint.",
   "main": "src/index.js",
   "repository": "robinloeffel/rollup-plugin-eslint",
@@ -23,7 +23,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@rollup/pluginutils": "3.x",
+    "@rollup/pluginutils": "4.x",
     "eslint": "7.x"
   },
   "devDependencies": {

@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.1
+_2020-08.15_
+
+- Upgrade [`@rollup/pluginutils`](https://github.com/rollup/plugins/blob/master/packages/pluginutils/CHANGELOG.md) to v4
+
 ## v1.1.0
 _2020-08-03_
 
