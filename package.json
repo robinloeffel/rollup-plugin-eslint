@@ -29,7 +29,7 @@
   "devDependencies": {
     "ava": "3.x",
     "eslint-config-sweet": "*",
-    "eslint-plugin-ava": "10.x",
+    "eslint-plugin-ava": "11.x",
     "husky": "4.x",
     "rollup": "2.x"
   },
