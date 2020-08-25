@@ -11,7 +11,7 @@ module.exports = (options = {}) => {
     ...eslintOptions
   } = options;
   const filter = createFilter(filterInclude, filterExclude);
-  const eslint = new ESLint(eslintOptions);  
+  const eslint = new ESLint(eslintOptions);
 
   return {
     name: 'eslint',
