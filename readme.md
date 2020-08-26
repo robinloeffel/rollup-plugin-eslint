@@ -54,7 +54,7 @@ Controls what type of files ESLint should look at. The default of `null` is equa
 
 Type: `boolean`<br>
 Default: `false`<br>
-Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L36)
+Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L38)
 
 Controls whether or not to throw an error and exit the process when ESLint reports any warnings.
 
@@ -62,7 +62,7 @@ Controls whether or not to throw an error and exit the process when ESLint repor
 
 Type: `boolean`<br>
 Default: `false`<br>
-Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L40)
+Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L42)
 
 Controls whether or not to throw an error and exit the process when ESLint reports any errors.
 
@@ -81,6 +81,15 @@ Default: `'node_modules/**'`<br>
 Utilized by: [`createFilter` plugin](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
 
 A single [`picomatch`](https://github.com/micromatch/picomatch) pattern or an array of patterns controlling which files this plugin should explicitly exclude. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) plugin, resulting in the matching files being completely skipped.
+
+### `lintOnLoad`
+
+Type: `boolean`
+Default: `false`
+Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L54)
+
+Controls the hook used to register the plugin within rollup.
+By default, the `transform` plugin is used which receives code that has potentially be transformed by other plugins (e.g.: typescript), resulting in inaccurate errors and warnings line and character number reporting. Turning on the `lintOnLoad` flag enables to perform linting at load time, which will garantee the linting happens on the exact text content stored in the text file.
 
 ## Why a new plugin?
 
