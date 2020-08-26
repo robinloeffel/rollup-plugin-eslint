@@ -71,3 +71,18 @@ test('eslint ignores node_modules', async t => {
 
   t.true(output[0].code.length > 0);
 });
+
+
+test('plugin can be registered with rollup load hook', async t => {
+  const bundle = await rollup({
+    input: 'test/fixtures/all-good.js',
+    plugins: [
+      eslint({ lintOnLoad: true })
+    ]
+  });
+  const { output } = await bundle.generate({
+    file: 'test/fixtures/all-good.js'
+  });
+
+  t.true(output[0].code.length > 0);
+});
