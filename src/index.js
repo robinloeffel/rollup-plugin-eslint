@@ -18,7 +18,6 @@ module.exports = (options = {}) => {
     load: async id => {
       if (filter(id)) {
         const results = await eslint.lintFiles(id);
-
         const [ result ] = results;
 
         if (eslintOptions.fix) {
@@ -42,6 +41,7 @@ module.exports = (options = {}) => {
 
         return result.output || null;
       }
+
       return null;
     }
   };
