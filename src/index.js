@@ -15,11 +15,9 @@ module.exports = (options = {}) => {
 
   return {
     name: 'eslint',
-    transform: async (code, id) => {
+    load: async id => {
       if (filter(id)) {
-        const results = await eslint.lintText(code, {
-          filePath: id
-        });
+        const results = await eslint.lintFiles(id);
         const [ result ] = results;
 
         if (eslintOptions.fix) {
