@@ -54,7 +54,7 @@ Controls what type of files ESLint should look at. The default of `null` is equa
 
 Type: `boolean`<br>
 Default: `false`<br>
-Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L35)
+Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L34)
 
 Controls whether or not to throw an error and exit the process when ESLint reports any warnings.
 
@@ -62,7 +62,7 @@ Controls whether or not to throw an error and exit the process when ESLint repor
 
 Type: `boolean`<br>
 Default: `false`<br>
-Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L39)
+Utilized by: [The plugin itself](https://github.com/robinloeffel/rollup-plugin-eslint/blob/master/src/index.js#L38)
 
 Controls whether or not to throw an error and exit the process when ESLint reports any errors.
 
