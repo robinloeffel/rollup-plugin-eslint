@@ -1,7 +1,13 @@
 # Changelog
 
+## v1.1.2
+_2020-08-29_
+
+- Use rollup's [`load` hook](https://rollupjs.org/guide/en/#load) instead of the [`transform` hook](https://rollupjs.org/guide/en/#transform) #4
+- Add typings
+
 ## v1.1.1
-_2020-08.15_
+_2020-08-15_
 
 - Upgrade [`@rollup/pluginutils`](https://github.com/rollup/plugins/blob/master/packages/pluginutils/CHANGELOG.md) to v4
 
