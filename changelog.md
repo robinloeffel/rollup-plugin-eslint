@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.3
+_2020-10-12_
+
+- Reference `types` in [`package.json`](package.json)
+
 ## v1.1.2
 _2020-08-29_
 

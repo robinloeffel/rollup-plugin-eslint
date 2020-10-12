@@ -1,9 +1,12 @@
 {
   "name": "@rbnlffl/rollup-plugin-eslint",
-  "version": "1.1.2",
-  "description": "Lint your Rollup bundles with ESLint.",
-  "main": "src/index.js",
+  "version": "1.1.3",
+  "description": "Lint your Rollup bundles with ESLint. 🐝",
+  "main": "source/index.js",
+  "types": "types/index.d.ts",
   "repository": "robinloeffel/rollup-plugin-eslint",
+  "homepage": "https://github.com/robinloeffel/rollup-plugin-eslint",
+  "bugs": "https://github.com/robinloeffel/rollup-plugin-eslint/issues",
   "author": "Robin Löffel (https://robinloeffel.ch) <hi@robinloeffel.ch>",
   "license": "MIT",
   "keywords": [
@@ -17,7 +20,7 @@
     "node": ">=10"
   },
   "files": [
-    "src",
+    "source",
     "types"
   ],
   "publishConfig": {
@@ -28,10 +31,10 @@
     "eslint": "7.x"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "5.x",
+    "@rollup/plugin-typescript": "6.x",
     "@types/eslint": "7.x",
-    "@typescript-eslint/eslint-plugin": "3.x",
-    "@typescript-eslint/parser": "3.x",
+    "@typescript-eslint/eslint-plugin": "4.x",
+    "@typescript-eslint/parser": "4.x",
     "ava": "3.x",
     "eslint-config-sweet": "*",
     "eslint-plugin-ava": "11.x",
