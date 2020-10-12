@@ -1,6 +1,6 @@
 const fs = require('fs');
 const test = require('ava');
-const eslint = require('../src');
+const eslint = require('../source');
 const { rollup } = require('rollup');
 const typescript = require('@rollup/plugin-typescript');
 const { terser } = require('rollup-plugin-terser');
