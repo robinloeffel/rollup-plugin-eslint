@@ -70,17 +70,17 @@ Controls whether or not to throw an error and exit the process when ESLint repor
 
 Type: `string` or `string[]`<br>
 Default: `undefined`<br>
-Utilized by: [`createFilter` plugin](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
+Utilized by: [`@rollup/pluginutils`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
 
-A single [`picomatch`](https://github.com/micromatch/picomatch) pattern or an array of patterns controlling which files this plugin should explicitly include. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) plugin.
+A single [`picomatch`](https://github.com/micromatch/picomatch) pattern or an array of patterns controlling which files this plugin should explicitly include. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) method of `@rollup/pluginutils`.
 
 ### `filterExclude`
 
 Type: `string` or `string[]`<br>
 Default: `'node_modules/**'`<br>
-Utilized by: [`createFilter` plugin](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
+Utilized by: [`@rollup/pluginutils`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
 
-A single [`picomatch`](https://github.com/micromatch/picomatch) pattern or an array of patterns controlling which files this plugin should explicitly exclude. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) plugin, resulting in the matching files being completely skipped.
+A single [`picomatch`](https://github.com/micromatch/picomatch) pattern or an array of patterns controlling which files this plugin should explicitly exclude. Gets forwarded to the [`createFilter`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter) method of `@rollup/pluginutils`.
 
 ## Why a new plugin?
 
