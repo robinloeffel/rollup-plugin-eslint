@@ -2,7 +2,7 @@ import { FilterPattern } from '@rollup/pluginutils';
 import { Plugin } from 'rollup';
 import { ESLint } from 'eslint';
 
-interface RollupEslintOptions extends ESLint.Options {
+export interface RollupEslintOptions extends ESLint.Options {
   /**
    * controls whether or not to throw an error and exit the
    * process when eslint reports any warnings
