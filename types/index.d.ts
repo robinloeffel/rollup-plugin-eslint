@@ -2,7 +2,7 @@ import { FilterPattern } from '@rollup/pluginutils';
 import { Plugin } from 'rollup';
 import { ESLint } from 'eslint';
 
-export interface RollupEslintOptions extends ESLint.Options {
+interface RollupEslintOptions extends ESLint.Options {
   /**
    * controls whether or not to throw an error and exit the
    * process when eslint reports any warnings
@@ -32,4 +32,6 @@ export interface RollupEslintOptions extends ESLint.Options {
   filterExclude?: FilterPattern
 }
 
-export default function(options?: RollupEslintOptions): Plugin;
+declare function eslint(options?: RollupEslintOptions): Plugin;
+
+export = eslint;

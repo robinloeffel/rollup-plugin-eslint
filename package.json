@@ -1,10 +1,10 @@
 {
   "name": "@rbnlffl/rollup-plugin-eslint",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Lint your Rollup bundles with ESLint. 🐝",
   "main": "source/index.js",
   "types": "types/index.d.ts",
-  "repository": "robinloeffel/rollup-plugin-eslint",
+  "repository": "https://github.com/robinloeffel/rollup-plugin-eslint.git",
   "homepage": "https://github.com/robinloeffel/rollup-plugin-eslint",
   "bugs": "https://github.com/robinloeffel/rollup-plugin-eslint/issues",
   "author": "Robin Löffel (https://robinloeffel.ch) <hi@robinloeffel.ch>",

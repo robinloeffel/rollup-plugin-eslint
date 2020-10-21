@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.4
+_2020-10-21_
+
+- Fix types once and for all
+
 ## v1.1.3
 _2020-10-12_
 
