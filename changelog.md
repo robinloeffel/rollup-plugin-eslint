@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.0
+_2021-04-25_
+
+- Only support Node v12 and above from now on
 ## v1.1.4
 _2020-10-21_
 
