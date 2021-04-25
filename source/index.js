@@ -15,7 +15,7 @@ module.exports = (options = {}) => {
 
   return {
     name: 'eslint',
-    load: async id => {
+    async load(id) {
       if (filter(id)) {
         const results = await eslint.lintFiles(id);
         const [ result ] = results;
@@ -31,11 +31,11 @@ module.exports = (options = {}) => {
           console.log(output);
         }
 
-        if (result.warningCount > 0 && throwOnWarning) {
+        if (throwOnWarning && result.warningCount > 0) {
           throw new Error(`Found ${result.warningCount} warning(s) in ${relative('.', result.filePath)}!`);
         }
 
-        if (result.errorCount > 0 && throwOnError) {
+        if (throwOnError && result.errorCount > 0) {
           throw new Error(`Found ${result.errorCount} error(s) in ${relative('.', result.filePath)}!`);
         }
 
