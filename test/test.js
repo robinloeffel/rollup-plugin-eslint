@@ -1,9 +1,14 @@
-const fs = require('fs');
 const test = require('ava');
 const eslint = require('../source');
 const { rollup } = require('rollup');
 const typescript = require('@rollup/plugin-typescript');
 const { terser } = require('rollup-plugin-terser');
+const {
+  promises: {
+    readFile,
+    writeFile
+  }
+} = require('fs');
 
 test('runs with the plugin', async t => {
   const bundle = await rollup({
@@ -12,9 +17,12 @@ test('runs with the plugin', async t => {
       eslint()
     ]
   });
-  const { output } = await bundle.generate({ file: '' });
 
-  t.true(output[0].code.length > 0);
+  const {
+    output: [ output ]
+  } = await bundle.generate({});
+
+  t.true(output.code.length > 0);
 });
 
 test('runs with the plugin and a configuration', async t => {
@@ -27,26 +35,31 @@ test('runs with the plugin and a configuration', async t => {
       })
     ]
   });
-  const { output } = await bundle.generate({ file: '' });
 
-  t.true(output[0].code.length > 0);
+  const {
+    output: [ output ]
+  } = await bundle.generate({});
+
+  t.true(output.code.length > 0);
 });
 
 test('autofix works', async t => {
+  const filePath = 'test/fixtures/will-fix.js';
+  const originalFileContents = await readFile(filePath);
+
   const bundle = await rollup({
     input: 'test/fixtures/will-fix.js',
     plugins: [
       eslint({ fix: true })
     ]
   });
-  const { output } = await bundle.generate({ file: '' });
+  const {
+    output: [ output ]
+  } = await bundle.generate({});
 
-  // revert file contents
-  const fixed = fs.readFileSync('test/fixtures/will-fix.js').toString();
-  const reverted = fixed.replace(/const/g, 'var');
-  fs.writeFileSync('test/fixtures/will-fix.js', reverted);
+  await writeFile(filePath, originalFileContents);
 
-  t.true(output[0].code.includes('const func'));
+  t.true(output.code.includes('const func'));
 });
 
 test('ignores node_modules', async t => {
@@ -56,9 +69,12 @@ test('ignores node_modules', async t => {
       eslint()
     ]
   });
-  const { output } = await bundle.generate({ file: '' });
 
-  t.true(output[0].code.length > 0);
+  const {
+    output: [ output ]
+  } = await bundle.generate({});
+
+  t.true(output.code.length > 0);
 });
 
 test('runs with typescript', async t => {
@@ -79,7 +95,10 @@ test('runs with typescript', async t => {
       terser()
     ]
   });
-  const { output } = await bundle.generate({ file: '' });
 
-  t.true(output[0].code.includes('var'));
+  const {
+    output: [ output ]
+  } = await bundle.generate({});
+
+  t.true(output.code.includes('var'));
 });
