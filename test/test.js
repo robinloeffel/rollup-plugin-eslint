@@ -19,10 +19,10 @@ test('runs with the plugin', async t => {
   });
 
   const {
-    output: [ output ]
+    output: [ chunk ]
   } = await bundle.generate({});
 
-  t.true(output.code.length > 0);
+  t.true(chunk.code.length > 0);
 });
 
 test('runs with the plugin and a configuration', async t => {
@@ -37,10 +37,10 @@ test('runs with the plugin and a configuration', async t => {
   });
 
   const {
-    output: [ output ]
+    output: [ chunk ]
   } = await bundle.generate({});
 
-  t.true(output.code.length > 0);
+  t.true(chunk.code.length > 0);
 });
 
 test('autofix works', async t => {
@@ -54,12 +54,12 @@ test('autofix works', async t => {
     ]
   });
   const {
-    output: [ output ]
+    output: [ chunk ]
   } = await bundle.generate({});
 
   await writeFile(filePath, originalFileContents);
 
-  t.true(output.code.includes('const func'));
+  t.true(chunk.code.includes('const func'));
 });
 
 test('ignores node_modules', async t => {
@@ -71,10 +71,10 @@ test('ignores node_modules', async t => {
   });
 
   const {
-    output: [ output ]
+    output: [ chunk ]
   } = await bundle.generate({});
 
-  t.true(output.code.length > 0);
+  t.true(chunk.code.length > 0);
 });
 
 test('runs with typescript', async t => {
@@ -97,8 +97,29 @@ test('runs with typescript', async t => {
   });
 
   const {
-    output: [ output ]
+    output: [ chunk ]
   } = await bundle.generate({});
 
-  t.true(output.code.includes('var'));
+  t.true(chunk.code.includes('var'));
+});
+
+test('does not run on files it shouldn\'t', async t => {
+  const bundle = await rollup({
+    input: 'test/fixtures/should-be-ignored.js',
+    plugins: [
+      eslint({
+        filterExclude: /should-be-ignored/,
+        throwOnWarning: true,
+        throwOnError: true
+      })
+    ]
+  });
+
+  await bundle.generate({});
+
+  // an error would've been thrown if the file
+  // were looked at. since this was not the case,
+  // else it would've been caught, simply pass
+  // the test
+  t.pass();
 });
