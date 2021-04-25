@@ -68,7 +68,7 @@ Controls whether or not to throw an error and exit the process when ESLint repor
 
 ### `filterInclude`
 
-Type: `string` or `string[]`<br>
+Type: [`FilterPattern`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#include-and-exclude)<br>
 Default: `undefined`<br>
 Utilized by: [`@rollup/pluginutils`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
 
@@ -76,7 +76,7 @@ A single [`picomatch`](https://github.com/micromatch/picomatch) pattern or an ar
 
 ### `filterExclude`
 
-Type: `string` or `string[]`<br>
+Type: [`FilterPattern`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#include-and-exclude)<br>
 Default: `'node_modules/**'`<br>
 Utilized by: [`@rollup/pluginutils`](https://github.com/rollup/plugins/tree/master/packages/pluginutils#createfilter)
 
