@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.0
+_2021-11-20_
+
+- Upgrade to [ESLint 8](https://eslint.org/docs/8.0.0/user-guide/migrating-to-8.0.0)
+- Bump minimum required Node.js version to `12.22`
+
 ## v2.0.0
 _2021-04-25_
 
