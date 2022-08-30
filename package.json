@@ -1,6 +1,6 @@
 {
   "name": "@rbnlffl/rollup-plugin-eslint",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Lint your Rollup bundles with ESLint. 🐝",
   "main": "source/index.js",
   "types": "types/index.d.ts",
@@ -27,24 +27,25 @@
     "access": "public"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^4.1.1",
-    "eslint": "^8.2.0"
+    "@rollup/pluginutils": "^4.2.1"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.3.0",
-    "@types/eslint": "^8.2.0",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "ava": "^3.15.0",
-    "eslint-config-sweet": "^7.0.0",
-    "eslint-plugin-ava": "^13.1.0",
-    "rollup": "^2.60.0",
+    "@rollup/plugin-typescript": "^8.4.0",
+    "@types/eslint": "^8.4.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.0",
+    "@typescript-eslint/parser": "^5.36.0",
+    "ava": "^4.3.3",
+    "eslint": "^8.23.0",
+    "eslint-config-sweet": "^8.0.1",
+    "eslint-plugin-ava": "^13.2.0",
+    "rollup": "^2.78.1",
     "rollup-plugin-terser": "^7.0.2",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.2"
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.2"
   },
   "peerDependencies": {
-    "rollup": "^2.60.0"
+    "eslint": "^8.23.0",
+    "rollup": "^2.78.1"
   },
   "scripts": {
     "start": "yarn test",

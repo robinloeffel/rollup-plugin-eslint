@@ -2,14 +2,13 @@ const { ESLint } = require('eslint');
 const { createFilter } = require('@rollup/pluginutils');
 const { relative } = require('path');
 
-module.exports = (options = {}) => {
-  const {
-    filterInclude,
-    filterExclude = 'node_modules/**',
-    throwOnWarning = false,
-    throwOnError = false,
-    ...eslintOptions
-  } = options;
+module.exports = ({
+  filterInclude,
+  filterExclude = 'node_modules/**',
+  throwOnWarning = false,
+  throwOnError = false,
+  ...eslintOptions
+} = {}) => {
   const filter = createFilter(filterInclude, filterExclude);
   const eslint = new ESLint(eslintOptions);
 

@@ -3,7 +3,7 @@
 [![latest version on npm](https://img.shields.io/npm/v/@rbnlffl/rollup-plugin-eslint)](https://www.npmjs.com/package/@rbnlffl/rollup-plugin-eslint)
 [![npm downloads a month](https://img.shields.io/npm/dm/@rbnlffl/rollup-plugin-eslint)](https://www.npmjs.com/package/@rbnlffl/rollup-plugin-eslint)
 [![required node version](https://img.shields.io/node/v/@rbnlffl/rollup-plugin-eslint)](https://github.com/nodejs/Release)
-[![eslint dependency](https://img.shields.io/npm/dependency-version/@rbnlffl/rollup-plugin-eslint/eslint?label=eslint%20dep)](https://github.com/eslint/eslint)
+[![eslint peer dependency](https://img.shields.io/npm/dependency-version/@rbnlffl/rollup-plugin-eslint/peer/eslint?label=eslint%20peer%20dep)](https://github.com/eslint/eslint)
 [![rollup peer dependency](https://img.shields.io/npm/dependency-version/@rbnlffl/rollup-plugin-eslint/peer/rollup?label=rollup%20peer%20dep)](https://github.com/rollup/rollup)
 [![package license](https://img.shields.io/npm/l/@rbnlffl/rollup-plugin-eslint)](license)
 

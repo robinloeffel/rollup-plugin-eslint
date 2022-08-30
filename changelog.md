@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.0
+_2022-08-30_
+
+- **Breaking:** Treat ESLint as a peer dependency
+- Update `@rollup/pluginutils`
+
 ## v3.0.0
 _2021-11-20_
 
