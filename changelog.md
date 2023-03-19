@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.0.0
+_2023-03-19_
+
+- Re-write in TypeScript
+- Only support Node.js 16 and above
+
 ## v4.0.0
 _2022-08-30_
 

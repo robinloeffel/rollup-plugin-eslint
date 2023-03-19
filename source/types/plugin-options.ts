@@ -1,8 +1,7 @@
-import { FilterPattern } from '@rollup/pluginutils';
-import { Plugin } from 'rollup';
-import { ESLint } from 'eslint';
+import { FilterPattern } from "@rollup/pluginutils";
+import { ESLint } from "eslint";
 
-interface RollupEslintOptions extends ESLint.Options {
+export interface RollupESLintOptions extends ESLint.Options {
   /**
    * controls whether or not to throw an error and exit the
    * process when eslint reports any warnings
@@ -18,20 +17,16 @@ interface RollupEslintOptions extends ESLint.Options {
   throwOnError?: boolean,
 
   /**
-   * A single picomatch pattern or an array of patterns controlling
+   * a single picomatch pattern or an array of patterns controlling
    * which files this plugin should explicitly include
    * @default undefined
    */
   filterInclude?: FilterPattern,
 
   /**
-   * A single picomatch pattern or an array of patterns controlling
+   * a single picomatch pattern or an array of patterns controlling
    * which files this plugin should explicitly exclude
    * @default 'node_modules/**'
    */
   filterExclude?: FilterPattern
 }
-
-declare function eslint(options?: RollupEslintOptions): Plugin;
-
-export = eslint;

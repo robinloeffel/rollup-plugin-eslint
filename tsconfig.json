@@ -1,0 +1,18 @@
+{
+  "include": [ "source" ],
+  "exclude": [ "node_modules" ],
+  "compilerOptions": {
+    "moduleResolution": "node16",
+    "module": "node16",
+    "target": "es2020",
+    "lib": [ "es2020", "dom" ],
+    "pretty": true,
+    "stripInternal": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "noEmitOnError": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist"
+  }
+}
