@@ -1,5 +1,5 @@
-import type { Plugin } from "rollup";
-import type { RollupESLintOptions } from "./types/plugin-options.js";
+import { type Plugin } from "rollup";
+import { type RollupESLintOptions } from "./types/plugin-options.js";
 
 import thrower from "./util/thrower.js";
 import { ESLint } from "eslint";

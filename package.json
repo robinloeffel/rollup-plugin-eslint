@@ -1,11 +1,11 @@
 {
   "name": "@rbnlffl/rollup-plugin-eslint",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Lint your Rollup bundles with ESLint. 🐝",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "repository": "https://github.com/robinloeffel/rollup-plugin-eslint.git",
+  "repository": "robinloeffel/rollup-plugin-eslint",
   "homepage": "https://github.com/robinloeffel/rollup-plugin-eslint",
   "bugs": "https://github.com/robinloeffel/rollup-plugin-eslint/issues",
   "author": "Robin Löffel (https://robinloeffel.ch) <hi@robinloeffel.ch>",
@@ -14,7 +14,7 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "files": [
     "source",
@@ -27,32 +27,34 @@
     "eslint"
   ],
   "dependencies": {
-    "@rollup/pluginutils": "^5.0.2"
+    "@rollup/pluginutils": "^5.0.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.4",
-    "@commitlint/config-conventional": "^17.4.4",
-    "@types/eslint": "^8.21.2",
-    "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0",
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "@types/eslint": "^8.44.6",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "chokidar-cli": "^3.0.0",
-    "concurrently": "^7.6.0",
-    "eslint": "^8.36.0",
-    "eslint-config-sweet": "^11.0.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.53.0",
+    "eslint-config-sweet": "^12.0.0",
+    "eslint-plugin-jsonc": "^2.10.0",
     "husky": "^8.0.3",
-    "rollup": "^3.19.1",
-    "typescript": "^5.0.2"
+    "rollup": "^4.3.0",
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "eslint": "^8.36.0",
-    "rollup": "^3.19.1"
+    "eslint": "^8",
+    "rollup": "^3 || ^4"
   },
   "scripts": {
-    "start": "yarn build && yarn watch",
+    "start": "bun run build && bun run watch",
     "build": "rm -rf dist && tsc",
     "test": "rollup -c ./test/rollup.config.js",
-    "watch": "concurrently 'yarn watch:source' 'yarn watch:test'",
-    "watch:source": "chokidar 'source/**/*' -c 'yarn build'",
-    "watch:test": "chokidar 'test/**/*' -c 'yarn test'"
+    "watch": "concurrently 'bun run watch:source' 'bun run watch:test'",
+    "watch:source": "chokidar 'source/**/*' -c 'bun run build'",
+    "watch:test": "chokidar 'test/**/*' -c 'bun run test'",
+    "prepare": "husky install"
   }
 }

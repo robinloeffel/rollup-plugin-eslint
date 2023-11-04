@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.0
+_2023-11-04_
+
+- Loosen peer dependency version on `eslint` and `rollup`
+- **Breaking:** Only support Node.js 18 and above
+
 ## v5.0.0
 _2023-03-19_
 

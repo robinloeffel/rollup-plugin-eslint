@@ -14,7 +14,7 @@ Nicely integrates the most recent version of [`eslint`](https://github.com/eslin
 ## How
 
 ```sh
-yarn add @rbnlffl/rollup-plugin-eslint --dev
+npm i -D @rbnlffl/rollup-plugin-eslint
 ```
 
 ```js

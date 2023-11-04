@@ -1,4 +1,4 @@
-import { FilterPattern } from "@rollup/pluginutils";
+import { type FilterPattern } from "@rollup/pluginutils";
 import { ESLint } from "eslint";
 
 export interface RollupESLintOptions extends ESLint.Options {
